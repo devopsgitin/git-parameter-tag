@@ -29,12 +29,8 @@
 pipeline {
   agent any
   stages {
-    stage('Build With TAGS') {
+    stage('Main Branch') {
       steps {
-        checkout scmGit(
-          branches: [[name: '$tagname']], 
-          userRemoteConfigs: [[url: 'https://github.com/devopsgitin/git-parameter-tag.git']]
-        )
         sh 'cat code.txt'
       }
     }
